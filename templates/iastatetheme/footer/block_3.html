@@ -1,0 +1,9 @@
+
+			<!-- footer-social -->
+			<section class="footer-social col-sm-12 col-md-3">
+				<ul class=" labeled">
+                    {% for menu_item in iastatetheme_config.footer_social_media_menu %}
+                        <li><a href="{{ menu_item.url }}"><span class="fa fa-external-link-square" aria-label="hidden"></span>{{ menu_item.text }}</a></li>
+                    {% endfor %}
+				</ul>
+			</section>

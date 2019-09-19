@@ -1,0 +1,29 @@
+{% load iastatethememenu %}
+
+<!-- navs -->
+  <div id="navs">
+
+  <!-- navbar-menu -->
+  <div class="navbar-menu-wrapper">
+  <nav class="navbar navbar-menu navbar-default navbar-static-top navbar-caps" role="navigation">
+  	<div class="container">
+  		<div class="collapse navbar-collapse" id="navbar-menu-collapse">
+  			<ul class="nav navbar-nav" >
+				{% for menu_item in iastatetheme_config.menu %}
+					{{ menu_item | render_menu_item }}
+				{% endfor %}
+  			</ul>
+  		</div>
+  	</div>
+  </nav>
+  </div>
+  <!-- /navbar-menu -->
+
+  </div>
+  <!-- /navs -->
+
+  <!-- post-nav -->
+  <div id="post-nav">
+  <!-- Place content here that you want displayed below navigation and above content. This is a great place to put banners, jumbotrons, carousels, and hero images. This area is not constrained by the theme "container" width, so content here can be full window width. -->
+  </div>
+  <!-- /post-nav -->
