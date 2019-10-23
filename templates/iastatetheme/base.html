@@ -17,7 +17,9 @@
     <link href="//cdn.theme.iastate.edu/favicon/favicon.png" rel="icon" type="">
     <link href="//cdn.theme.iastate.edu/favicon/apple-touch-icon.png" rel="icon">
 
-  <link rel="stylesheet" href="{% static 'css/iastate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/iastate.min.css' %}">
+
+    {% block extra_head_content  %}{% endblock %}
 
 </head>
 
@@ -248,8 +250,8 @@
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-  <script src="{% static 'js/vendor/bootstrap-submenu.min.js' %}"></script>
-  <script src="{% static 'js/iastate.js' %}"></script>
+    <script src="{% static 'js/vendor/bootstrap-submenu.min.js' %}"></script>
+    <script src="{% static 'js/iastate.js' %}"></script>
 
 </body>
 </html>
