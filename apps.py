@@ -8,6 +8,14 @@ class MenuItem(object):
             children = []
         self.children = children
 
+class SocialMenuItem(MenuItem):
+    def __init__(self, text, url, icon=None):
+        self.text = text
+        self.url = url
+        self.children = []
+        self.icon = icon
+
+
 class IastatethemeConfig(AppConfig):
     name = 'iastatetheme'
     site_name = 'IASTATE Theme'
@@ -32,9 +40,9 @@ class IastatethemeConfig(AppConfig):
         MenuItem("News", "#"),
     ]
     footer_social_media_menu = [
-        MenuItem("Facebook", "http://facebook.com/IowaStateU/"),
-        MenuItem("Twitter", "http://twitter.com/iowastateu?lang=en"),
-        MenuItem("Instagram", "http://instagram.com/iowastateu/"),
-        MenuItem("YouTube", "http://youtube.com/user/iowastateu"),
-        MenuItem("RSS", "http://www.news.iastate.edu/rss/rss.php"),
+        SocialMenuItem("Facebook", "http://facebook.com/IowaStateU/", "fab fa-facebook-square"),
+        SocialMenuItem("Twitter", "http://twitter.com/iowastateu?lang=en"),
+        SocialMenuItem("Instagram", "http://instagram.com/iowastateu/"),
+        SocialMenuItem("YouTube", "http://youtube.com/user/iowastateu"),
+        SocialMenuItem("RSS", "http://www.news.iastate.edu/rss/rss.php"),
     ]
