@@ -9,7 +9,7 @@
     <meta content="width=device-width,initial-scale=1" name="viewport">
     <meta content="telephone=no" name="format-detection">
     <title>{% block title %}{{ iastatetheme_config.site_name }}{% endblock %}</title>
-    
+
     <link href="//cdn.theme.iastate.edu/nimbus-sans/css/nimbus-sans.css" rel="stylesheet">
     <link href="//cdn.theme.iastate.edu/merriweather/css/merriweather.css" rel="stylesheet">
 
@@ -103,12 +103,14 @@
     <nav class="navbar-site">
         <div class="container">
 
+            {% block wordmark %}
             <div class="navbar-site-wordmark">
                 <a href="/" title="Home" class="wordmark-unit">
                     <span class="wordmark-isu">Iowa State University</span>
                     <span class="wordmark-unit-title">{{ iastatetheme_config.site_name }}</span>
                 </a>
             </div>
+            {% endblock %}
 
             <div class="navbar-header visible-xs visible-sm">
                 <button id="navbar-menu-button" type="button" class="navbar-toggle navbar-toggle-left collapsed" data-toggle="collapse" data-target="#navbar-menu-collapse, #navbar-site-links-collapse" aria-expanded="false">
@@ -121,14 +123,17 @@
                         Menu <span class="sr-only">Toggle</span>
                     </span>
                 </button>
+                {% block search-toggle %}
                 <button id="navbar-search-button" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-site-search-collapse" aria-expanded="false">
                     <span class="navbar-toggle-icon search-icon"></span>
                     <span class="navbar-toggle-label">
                         Search <span class="sr-only">Toggle</span>
                     </span>
                 </button>
+                {% endblock %}
             </div>
 
+            {% block search-form %}
             <div class="navbar-site-info collapse navbar-collapse" id="navbar-site-search-collapse">
                 <form action="//google.iastate.edu/search" class="navbar-site-search" method="GET" role="search">
                     <label for="search-input" class="sr-only">Search</label>
@@ -141,6 +146,7 @@
                     <span class="search-icon"></span>
                 </form>
             </div>
+            {% endblock %}
 
             <div class="navbar-site-info collapse navbar-collapse navbar-caps" id="navbar-site-links-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -159,7 +165,7 @@
 
     <!-- navs -->
     <div id="navs">
-  
+
     <!-- navbar-menu -->
     <div class="navbar-menu-wrapper">
     <nav class="navbar navbar-menu navbar-default navbar-static-top navbar-caps" role="navigation">
@@ -175,16 +181,16 @@
     </nav>
     </div>
     <!-- /navbar-menu -->
-  
+
     </div>
     <!-- /navs -->
-  
+
     <!-- post-nav -->
     <div id="post-nav">
     <!-- Place content here that you want displayed below navigation and above content. This is a great place to put banners, jumbotrons, carousels, and hero images. This area is not constrained by the theme "container" width, so content here can be full window width. -->
     </div>
     <!-- /post-nav -->
-  
+
     <!-- main -->
     <main role="main" id="main-content" class="">
         {% block content %}{% endblock %}
@@ -264,7 +270,7 @@
     <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/vendor/bootstrap-submenu.min.js' %}"></script>
     <script src="{% static 'js/iastate.js' %}"></script>
-    
+
     {% block extra_footer_scripts  %}{% endblock %}
 
 </body>
